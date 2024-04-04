@@ -1,0 +1,31 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@vueuse/core": "^10.9.0",
+    "chart.js": "^4.4.2",
+    "nuxt": "^3.10.3",
+    "vue": "^3.4.19",
+    "vue-chartjs": "^5.3.0",
+    "vue-router": "^4.3.0",
+    "vuedraggable": "^2.24.3"
+  },
+  "devDependencies": {
+    "@nuxt/test-utils": "^3.11.0",
+    "@nuxtjs/supabase": "^1.1.7",
+    "@nuxtjs/tailwindcss": "^6.11.4",
+    "@vue/test-utils": "^2.4.5",
+    "cypress": "^13.7.2",
+    "happy-dom": "^13.8.4",
+    "playwright-core": "^1.42.1"
+  }
+}
