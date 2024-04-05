@@ -61,15 +61,15 @@ const toggleDark = useToggle(isDark);
                 <ul class="space-y-4 dark:text-white">
                   <li>
                       <p class="font-bold">Kanban Board Creation:</p>
-                      <p class="ml-4">With DataFlow Kanban, creating Kanban boards tailored to your specific needs is a breeze. Whether you're managing personal projects, team collaborations, or business operations, you can easily set up customizable boards to visualize your workflow.</p>
+                      <p class="ml-4">With DataFlow Kanban, creating Kanban boards tailored to your specific needs is a breeze. Whether you're managing personal projects or business operations, you can easily set up customizable boards to visualize your workflow.</p>
                   </li>
                   <li>
                       <p class="font-bold">Simple Interface:</p>
-                      <p class="ml-4">Say goodbye to tedious manual task management. DataFlow Kanban lets you effortlessly move cards across your boards with a simple interface. Whether you're reordering tasks, assigning priorities, or updating statuses, it's all smooth sailing.</p>
+                      <p class="ml-4">Say goodbye to tedious manual task management. DataFlow Kanban lets you effortlessly move cards across your boards with a simple interface. Whether you're reordering tasks or updating statuses, it's all smooth sailing.</p>
                   </li>
                   <li>
                       <p class="font-bold">Task Customization:</p>
-                      <p class="ml-4">Each task on your Kanban board can be fully customized to suit your requirements. Add titles, descriptions, due dates, labels, and more to ensure clarity and organization within your workflow.</p>
+                      <p class="ml-4">Each task on your Kanban board can be fully customized to suit your requirements.</p>
                   </li>
                 </ul>
                 <br>

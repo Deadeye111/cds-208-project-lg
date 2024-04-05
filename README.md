@@ -1,8 +1,29 @@
-# Nuxt 3 Minimal Starter
+# Nuxt 3 Canban Board Project
+
+## Deployment
+
+The project was deployed on Vercel and can be viewed here: [cds-208-project-lg.vercel.app](https://cds-208-project-lg.vercel.app/)
+
+## Description
+
+This Project was built using:
+
+- Vue JS
+    - Frontend
+- Nuxt 3
+    - Vue Framework
+- Supabase
+    - Backend
+- Tailwind CSS
+    - Styling
+- Cypress
+    - Testing
+
+## Technical Documentation
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-## Setup
+### Setup
 
 Make sure to install the dependencies:
 
@@ -20,7 +41,7 @@ yarn install
 bun install
 ```
 
-## Development Server
+### Development Server
 
 Start the development server on `http://localhost:3000`:
 
@@ -38,7 +59,7 @@ yarn dev
 bun run dev
 ```
 
-## Production
+### Production
 
 Build the application for production:
 
@@ -71,5 +92,3 @@ yarn preview
 # bun
 bun run preview
 ```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
