@@ -20,24 +20,32 @@ if (data) {
 loading.value = false
 
 async function updateProfile() {
-  try {
-    loading.value = true
-    const user = useSupabaseUser()
+  // Validate username
+  if (username.value==='') {
+    // Handle validation error, e.g., display an error message
+    alert("Username cannot be empty");
+    return;
+  }
+  else {
+    try {
+      loading.value = true
+      const user = useSupabaseUser()
 
-    const updates = {
-      id: user.value.id,
-      username: username.value,
-      updated_at: new Date(),
+      const updates = {
+        id: user.value.id,
+        username: username.value,
+        updated_at: new Date(),
+      }
+
+      const { error } = await supabase.from('profiles').upsert(updates, {
+        returning: 'minimal', // Don't return the value after inserting
+      })
+      if (error) throw error
+    } catch (error) {
+      alert(error.message)
+    } finally {
+      loading.value = false
     }
-
-    const { error } = await supabase.from('profiles').upsert(updates, {
-      returning: 'minimal', // Don't return the value after inserting
-    })
-    if (error) throw error
-  } catch (error) {
-    alert(error.message)
-  } finally {
-    loading.value = false
   }
 }
 
