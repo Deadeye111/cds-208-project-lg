@@ -229,9 +229,9 @@ const newColumn = async (taskID) => {
 </script>
 
 <template>
-  <main class="dark:bg-[#121212] bg-white min-h-screen pb-20">
+  <main class="dark:bg-[#121212] bg-white min-h-screen pb-20 pl-5 pr-5">
     <div class="flex justify-between relative">
-      <Header v-if="boardExists" title={{ boardName }} />
+      <Header v-if="boardExists" :title=boardName />
       <div v-else class="border-2 border-solid border-slate-700 dark:border-slate-200 p-10 mt-20 text-lg text-red-600 text-center m-auto">
         <p>Board does not exist</p>
         <br>

@@ -124,7 +124,7 @@ const updateBoard = async (boardID, boardName) => {
 </script>
 
 <template>
-  <main class="dark:bg-[#121212] bg-white min-h-screen pb-20">
+  <main class="dark:bg-[#121212] bg-white min-h-screen pb-20 pl-5 pr-5">
     <Header title="Dashboard" />
 
     <div class="container mx-auto pt-5 mt-5">
