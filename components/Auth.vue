@@ -18,22 +18,14 @@ const handleLogin = async () => {
 }
 </script>
 
-<template>
-  <div class="flex justify-between relative">
-    <div class="w-full pt-10 pb-10 bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 relative">
-      <h1 class="xl:text-7xl md:text-5xl text-4xl text-white text-center">
-        Sign up
-      </h1>
-    </div>
-  </div>
-  
+<template>  
   <div class="flex">
     <div class="m-auto my-40">
       <p class="text-lg dark:text-white mb-5">Sign in via magic link with your email below</p>
       
       <form class="w-full max-w-sm" @submit.prevent="handleLogin">
         <div class="flex items-center border-b border-teal-500 py-2">
-          <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="email" placeholder="Your email" v-model="email" />
+          <input class="appearance-none bg-transparent border-none w-full text-black dark:text-white mr-3 py-1 px-2 leading-tight focus:outline-none" type="email" placeholder="Your email" v-model="email" />
           <input
               type="submit"
               class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded"

@@ -56,14 +56,6 @@ async function signOut() {
 </script>
 
 <template>
-  <div class="flex justify-between relative">
-    <div class="w-full pt-10 pb-10 bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 relative">
-      <h1 class="xl:text-7xl md:text-5xl text-4xl text-white text-center">
-        Account
-      </h1>
-    </div>
-  </div>
-
   <div class="flex">
     <div class="m-auto my-40">
       <p class="text-lg dark:text-white mb-5">Sign in via magic link with your email below</p>
@@ -75,7 +67,7 @@ async function signOut() {
             </label>
           </div>
           <div class="md:w-2/3">
-            <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 cursor-not-allowed" id="email" type="text" :value="user.email" disabled />
+            <input class="text-black dark:text-white bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 cursor-not-allowed" id="email" type="text" :value="user.email" disabled />
           </div>
         </div>
 

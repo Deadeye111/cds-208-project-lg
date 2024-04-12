@@ -5,6 +5,8 @@ definePageMeta({
 
 import { useDark, useToggle } from "@vueuse/core";
 
+import Header from '../components/Header'
+
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
 
@@ -123,13 +125,7 @@ const updateBoard = async (boardID, boardName) => {
 
 <template>
   <main class="dark:bg-[#121212] bg-white min-h-screen pb-20">
-    <div class="flex justify-between relative">
-      <div class="w-full pt-10 pb-10 bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 relative">
-        <h1 class="xl:text-7xl md:text-5xl text-4xl text-white text-center">
-          Dashboard
-        </h1>
-      </div>
-    </div>
+    <Header title="Dashboard" />
 
     <div class="container mx-auto pt-5 mt-5">
       <div class="flex justify-center">
