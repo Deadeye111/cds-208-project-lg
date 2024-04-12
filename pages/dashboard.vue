@@ -132,7 +132,7 @@ const updateBoard = async (boardID, boardName) => {
         <div class="grid grid-cols-1 gap-5 w-full">
           <div class="bg-white dark:bg-[#121212] p-5 shadow-md rounded-lg flex-grow border-2 border-solid border-slate-200">
             <h1 class="text-xl font-bold text-center w-full h-auto mb-4 dark:text-white">
-              Welcome to <span class="bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent font-semibold drop-shadow">{{ username }}'s</span> Canban Dashboard
+              Welcome to <span v-if="username" class="bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent font-semibold drop-shadow">{{ username }}'s</span> Canban Dashboard
             </h1>
             <h1 class="dark:text-white text-lg font-bold w-full text-center border-2 mb-3">Create Boards</h1>
             <div class="flex items-center justify-center mt-5">
