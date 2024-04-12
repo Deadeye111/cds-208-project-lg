@@ -229,7 +229,7 @@ const newColumn = async (taskID) => {
 </script>
 
 <template>
-  <main class="dark:bg-[#121212] bg-white min-h-screen pb-20 pl-5 pr-5">
+  <main class="dark:bg-[#121212] bg-white min-h-screen pb-20">
     <Header v-if="boardExists" :title=boardName />
 
     <div v-if="!boardExists" class="flex justify-between relative">
@@ -244,7 +244,7 @@ const newColumn = async (taskID) => {
       </div>
     </div>
 
-    <div v-if="boardExists" class="container mx-auto pt-5 mt-5">
+    <div v-if="boardExists" class="container mx-auto pt-5 mt-5 pl-5 pr-5">
       <div class="flex justify-center">
         <div class="grid grid-cols-1 gap-5 w-full">
           <!-- Input field for creating a new column -->

@@ -127,7 +127,7 @@ const updateBoard = async (boardID, boardName) => {
   <main class="dark:bg-[#121212] bg-white min-h-screen pb-20 pl-5 pr-5">
     <Header title="Dashboard" />
 
-    <div class="container mx-auto pt-5 mt-5">
+    <div class="container mx-auto pt-5 mt-5 pl-5 pr-5">
       <div class="flex justify-center">
         <div class="grid grid-cols-1 gap-5 w-full">
           <div class="bg-white dark:bg-[#121212] p-5 shadow-md rounded-lg flex-grow border-2 border-solid border-slate-200">
