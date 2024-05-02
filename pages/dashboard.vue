@@ -135,16 +135,16 @@ const updateBoard = async (boardID, boardName) => {
               Welcome to <span v-if="username" class="bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent font-semibold drop-shadow">{{ username }}'s</span> Canban Dashboard
             </h1>
 
-            <div class="flex flex-col items-center mt-10 border-2">
-              <h1 class="dark:text-white text-lg font-bold w-full text-center mb-3">Create Boards</h1>
-              <div class="flex items-center justify-center mt-5">
+            <div class="flex flex-col items-center mt-10 mb-5 border-2">
+              <h1 class="dark:text-white text-lg font-bold w-full text-center mb-3 mt-3">Create Boards</h1>
+              <div class="flex items-center justify-center">
                 <input type="text" v-model="newBoardName" placeholder="Create a new Canban board.." class="px-4 py-2 w-72 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300">
                 <button @click="createBoard" class="ml-2 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Add</button>
               </div>
             </div>
 
             <div class="flex flex-col items-center mt-10 border-2">
-              <h1 class="dark:text-white text-lg font-bold w-full text-center mb-3">List of Boards</h1>
+              <h1 class="dark:text-white text-lg font-bold w-full text-center mb-3 mt-3">List of Boards</h1>
               <ul>
                 <li v-for="(board, index) in boardArray" :key="index" class="dark:text-white mb-4">
                   <div class="flex flex-col lg:flex-row lg:items-center lg:space-x-4">
