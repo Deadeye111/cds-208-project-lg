@@ -43,10 +43,6 @@ const barData = ref([]);
 
 const loadEntries = async () => {
   loading.value = true
-
-  for (const key in boardData) {
-    delete boardData[key]; // Remove all properties from boardData
-  }
   
   const { data: canbanBoardColumns } = await supabase
     .from('board_columns')
