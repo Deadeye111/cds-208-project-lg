@@ -134,13 +134,17 @@ const updateBoard = async (boardID, boardName) => {
             <h1 class="text-xl font-bold text-center w-full h-auto mb-4 dark:text-white">
               Welcome to <span v-if="username" class="bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent font-semibold drop-shadow">{{ username }}'s</span> Canban Dashboard
             </h1>
-            <h1 class="dark:text-white text-lg font-bold w-full text-center border-2 mb-3">Create Boards</h1>
-            <div class="flex items-center justify-center mt-5">
-              <input type="text" v-model="newBoardName" placeholder="Create a new Canban board.." class="px-4 py-2 w-72 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300">
-              <button @click="createBoard" class="ml-2 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Add</button>
+
+            <div class="flex flex-col items-center mt-10 border-2">
+              <h1 class="dark:text-white text-lg font-bold w-full text-center mb-3">Create Boards</h1>
+              <div class="flex items-center justify-center mt-5">
+                <input type="text" v-model="newBoardName" placeholder="Create a new Canban board.." class="px-4 py-2 w-72 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300">
+                <button @click="createBoard" class="ml-2 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Add</button>
+              </div>
             </div>
-            <div class="flex flex-col items-center mt-10">
-              <h1 class="dark:text-white text-lg font-bold w-full text-center border-2 mb-3">List of Boards</h1>
+
+            <div class="flex flex-col items-center mt-10 border-2">
+              <h1 class="dark:text-white text-lg font-bold w-full text-center mb-3">List of Boards</h1>
               <ul>
                 <li v-for="(board, index) in boardArray" :key="index" class="dark:text-white mb-4">
                   <div class="flex flex-col lg:flex-row lg:items-center lg:space-x-4">
@@ -148,7 +152,7 @@ const updateBoard = async (boardID, boardName) => {
                       <span class="mr-2">Name:</span>
                       <input type="text" v-model="board.name" class="border border-gray-300 rounded-md px-2 py-1 text-black">
                     </div>
-                    <div class="mt-2 lg:mt-0">Created At: {{ new Date(board.created_at).toLocaleString('de-CH', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }) }}</div>
+                    <div class="mt-2 lg:mt-0">Created at: {{ new Date(board.created_at).toLocaleString('de-CH', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }) }}</div>
                     <button @click="updateBoard(board.id, board.name)" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 mt-2 lg:mt-0">Update</button>
                     <NuxtLink :to="`/canbanBoard/${board.id}`" class="text-center bg-lime-500 text-white px-4 py-2 rounded-md hover:bg-lime-600 mt-2 lg:mt-0">View</NuxtLink>
                     <button @click="deleteBoard(board.id)" class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 mt-2 lg:mt-0">Delete</button>

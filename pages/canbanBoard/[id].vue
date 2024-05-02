@@ -45,7 +45,9 @@ const loadEntries = async () => {
   loading.value = true
 
   // Empty boardData
-  boardData.splice(0)
+  for (const key in boardData) {
+    delete boardData[key];
+  }
   
   const { data: canbanBoardColumns } = await supabase
     .from('board_columns')
