@@ -43,6 +43,9 @@ const barData = ref([]);
 
 const loadEntries = async () => {
   loading.value = true
+
+  // Empty boardData
+  boardData.splice(0)
   
   const { data: canbanBoardColumns } = await supabase
     .from('board_columns')
