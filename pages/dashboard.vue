@@ -135,7 +135,7 @@ const updateBoard = async (boardID, boardName) => {
               Welcome to <span v-if="username" class="bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent font-semibold drop-shadow">{{ username }}'s</span> Canban Dashboard
             </h1>
 
-            <div class="flex flex-col items-center mt-10 mb-5 border-2">
+            <div class="flex flex-col items-center mt-10 pb-5 border-2">
               <h1 class="dark:text-white text-lg font-bold w-full text-center mb-3 mt-3">Create Boards</h1>
               <div class="flex items-center justify-center">
                 <input type="text" v-model="newBoardName" placeholder="Create a new Canban board.." class="px-4 py-2 w-72 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300">
