@@ -248,12 +248,13 @@ const newColumn = async (taskID) => {
     <div v-if="boardExists" class="container mx-auto pt-5 mt-5 pl-5 pr-5">
       <div class="flex justify-center">
         <div class="grid grid-cols-1 gap-5 w-full">
-          <p class="text-xl font-bold text-center w-full h-auto dark:text-white">
-            How to use the Canban Board:
-          </p>
-          <p class="text-xl text-center w-full h-auto dark:text-white">
-            Tasks get updated automatically after the text in the input field was changed<br>To delete a task just empty the input field<br>To move a task choose the new column from the dropdown
-          </p>
+          <!-- Instructions -->
+          <div class="p-3 shadow-md rounded-lg flex-grow border-2 border-solid border-slate-200">
+            <h1 class="dark:text-white text-lg font-bold w-full text-center mb-3">How to use the Canban Board</h1>
+            <p class="text-md text-center w-full h-auto dark:text-white">
+              Tasks get updated automatically after the text in the input field was changed<br>To delete a task just empty the input field<br>To move a task choose the new column from the dropdown
+            </p>
+          </div>
 
           <!-- Input field for creating a new column -->
           <div class="p-3 shadow-md rounded-lg flex-grow border-2 border-solid border-slate-200">
@@ -292,7 +293,7 @@ const newColumn = async (taskID) => {
                   </button>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-1 p-1 w-full" v-for="(task, index) in column.tasks" :key="index">
-                  <input @blur="updateTask(task.id, task.title)" type="text" v-model="task.title" class="h-8 align-middle border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300">
+                  <input @blur="updateTask(task.id, task.title)" type="text" v-model="task.title" class="h-8 px-2 align-middle border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300">
                   <select v-model="updatedSelectedColumnID" @change="newColumn(task.id)" class="h-8 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300">
                     <option disabled value="" selected>Change Column</option>
                     <option v-for="(column, key) in boardData" :key="key" :value="key">{{ column.title }}</option>
@@ -303,7 +304,8 @@ const newColumn = async (taskID) => {
           </div>
 
           <div class="p-3 shadow-md rounded-lg flex-grow border-2 border-solid border-slate-200">
-            <BarChart title="Number of Tasks per Column" legendLabel="Count" :labels="barLabels" :data="barData" />
+            <h1 class="dark:text-white text-center mt-1 text-lg font-bold w-full pl-2">Number of tasks per column</h1>
+            <BarChart title="" legendLabel="Count" :labels="barLabels" :data="barData" />
           </div>
         </div>
       </div>

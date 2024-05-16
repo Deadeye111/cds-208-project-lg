@@ -149,7 +149,7 @@ const updateBoard = async (boardID, boardName) => {
                 <div class="flex flex-col lg:flex-row lg:items-center lg:space-x-4">
                   <div class="flex items-center mt-2 lg:mt-0">
                     <span class="mr-2">Name:</span>
-                    <input @blur="updateBoard(board.id, board.name)" type="text" v-model="board.name" class="px-2 py-1 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300">
+                    <input @blur="updateBoard(board.id, board.name)" type="text" v-model="board.name" class="px-2 py-1 text-black border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300">
                   </div>
                   <div class="mt-2 lg:mt-0">Created at: {{ new Date(board.created_at).toLocaleString('de-CH', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }) }}</div>
                   <NuxtLink :to="`/canbanBoard/${board.id}`" class="text-center bg-lime-500 text-white px-4 py-2 rounded-md hover:bg-lime-600 mt-2 lg:mt-0">View</NuxtLink>
