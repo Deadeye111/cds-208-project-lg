@@ -249,7 +249,10 @@ const newColumn = async (taskID) => {
       <div class="flex justify-center">
         <div class="grid grid-cols-1 gap-5 w-full">
           <p class="text-xl font-bold text-center w-full h-auto dark:text-white">
-          How to use the Canban Board:<br>Tasks get updated automatically after the text in the input field was changed<br>To delete a task just empty the input field<br>To move a task choose the new column from the dropdown
+            How to use the Canban Board:
+          </p>
+          <p class="text-xl text-center w-full h-auto dark:text-white">
+            Tasks get updated automatically after the text in the input field was changed<br>To delete a task just empty the input field<br>To move a task choose the new column from the dropdown
           </p>
 
           <!-- Input field for creating a new column -->
@@ -289,7 +292,7 @@ const newColumn = async (taskID) => {
                   </button>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-1 p-1 w-full" v-for="(task, index) in column.tasks" :key="index">
-                  <input @blur="updateTask(task.id, task.title)" type="text" v-model="task.title" class="h-8 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300">
+                  <input @blur="updateTask(task.id, task.title)" type="text" v-model="task.title" class="h-8 align-middle border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300">
                   <select v-model="updatedSelectedColumnID" @change="newColumn(task.id)" class="h-8 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300">
                     <option disabled value="" selected>Change Column</option>
                     <option v-for="(column, key) in boardData" :key="key" :value="key">{{ column.title }}</option>
