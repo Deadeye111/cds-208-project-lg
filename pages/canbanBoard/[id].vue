@@ -249,7 +249,7 @@ const newColumn = async (taskID) => {
       <div class="flex justify-center">
         <div class="grid grid-cols-1 gap-5 w-full">
           <!-- Input field for creating a new column -->
-          <div class="bg-white dark:bg-[#121212] p-3 shadow-md rounded-lg flex-grow border-2 border-solid border-slate-200">
+          <div class="p-3 shadow-md rounded-lg flex-grow border-2 border-solid border-slate-200">
             <h1 class="dark:text-white text-lg font-bold w-full text-center mb-3">Create a new column</h1>
             <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-5 w-full">
               <input v-model="newColumnName" type="text" class="py-2 px-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500" placeholder="Enter column name">
@@ -258,7 +258,7 @@ const newColumn = async (taskID) => {
           </div>
 
           <!-- Dropdown for choosing a column to add a task -->
-          <div class="bg-white dark:bg-[#121212] p-3 shadow-md rounded-lg flex-grow border-2 border-solid border-slate-200">
+          <div class="p-3 shadow-md rounded-lg flex-grow border-2 border-solid border-slate-200">
             <h1 class="dark:text-white text-lg font-bold w-full text-center mb-3">Add task to an existing column</h1>
             <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-5 w-full">
               <select v-model="newSelectedColumnID" class="py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
@@ -272,7 +272,7 @@ const newColumn = async (taskID) => {
           </div>
 
           <!-- Canban board -->
-          <div class="bg-white dark:bg-[#121212] p-3 shadow-md rounded-lg flex-grow border-2 border-solid border-slate-200">
+          <div class="p-3 shadow-md rounded-lg flex-grow border-2 border-solid border-slate-200">
             <h1 class="dark:text-white text-lg font-bold w-full text-center mb-3">Canban board</h1>
             <p v-if="loading">Loading..</p>
             <div v-else class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 w-full">
@@ -295,7 +295,7 @@ const newColumn = async (taskID) => {
             </div>
           </div>
 
-          <div class="bg-white dark:bg-[#121212] p-3 shadow-md rounded-lg flex-grow border-2 border-solid border-slate-200">
+          <div class="p-3 shadow-md rounded-lg flex-grow border-2 border-solid border-slate-200">
             <BarChart title="Number of Tasks per Column" legendLabel="Count" :labels="barLabels" :data="barData" />
           </div>
         </div>
