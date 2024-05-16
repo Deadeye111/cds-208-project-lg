@@ -73,7 +73,7 @@ const toggleDark = useToggle(isDark);
                   Access your personal dashboard below
                 </p>
                 <NuxtLink to="/dashboard">
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">
+                    <button class="bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600 py-2 px-4">
                         To your dashboard
                     </button>
                 </NuxtLink>

@@ -253,7 +253,7 @@ const newColumn = async (taskID) => {
             <h1 class="dark:text-white text-lg font-bold w-full text-center mb-3">Create a new column</h1>
             <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-5 w-full">
               <input v-model="newColumnName" type="text" class="py-2 px-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500" placeholder="Enter column name">
-              <button @click="createColumn" class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 focus:outline-none focus:bg-indigo-700">Add Column</button>
+              <button @click="createColumn" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Add Column</button>
             </div>
           </div>
 
@@ -261,13 +261,13 @@ const newColumn = async (taskID) => {
           <div class="p-3 shadow-md rounded-lg flex-grow border-2 border-solid border-slate-200">
             <h1 class="dark:text-white text-lg font-bold w-full text-center mb-3">Add task to an existing column</h1>
             <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-5 w-full">
-              <select v-model="newSelectedColumnID" class="py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+              <select v-model="newSelectedColumnID" class="py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-600 focus:border-indigo-600">
                 <option disabled value="">Select a column</option>
                 <option v-for="(column, key) in boardData" :key="key" :value="key">{{ column.title }}</option>
               </select>
-              <input v-model="newTaskName" type="text" class="py-2 px-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-500" placeholder="Enter task name">
+              <input v-model="newTaskName" type="text" class="py-2 px-3 rounded border border-gray-300 focus:outline-none focus:border-indigo-600" placeholder="Enter task name">
               <div></div>
-              <button @click="createTask" class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 focus:outline-none focus:bg-indigo-700">Add Task</button>
+              <button @click="createTask" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Add Task</button>
             </div>
           </div>
 
