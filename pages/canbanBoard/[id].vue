@@ -248,11 +248,15 @@ const newColumn = async (taskID) => {
     <div v-if="boardExists" class="container mx-auto pt-5 mt-5 pl-5 pr-5">
       <div class="flex justify-center">
         <div class="grid grid-cols-1 gap-5 w-full">
+          <p class="text-xl font-bold text-center w-full h-auto dark:text-white">
+          How to use the Canban Board:<br>Tasks get updated automatically after the text in the input field was changed<br>To delete a task just empty the input field<br>To move a task choose the new column from the dropdown
+          </p>
+
           <!-- Input field for creating a new column -->
           <div class="p-3 shadow-md rounded-lg flex-grow border-2 border-solid border-slate-200">
             <h1 class="dark:text-white text-lg font-bold w-full text-center mb-3">Create a new column</h1>
             <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-5 w-full">
-              <input v-model="newColumnName" type="text" class="py-2 px-3 rounded-md border border-gray-300 focus:outline-none focus:border-indigo-600" placeholder="Enter column name">
+              <input v-model="newColumnName" type="text" class="py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300" placeholder="Enter column name">
               <button @click="createColumn" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Add Column</button>
             </div>
           </div>
@@ -261,11 +265,11 @@ const newColumn = async (taskID) => {
           <div class="p-3 shadow-md rounded-lg flex-grow border-2 border-solid border-slate-200">
             <h1 class="dark:text-white text-lg font-bold w-full text-center mb-3">Add task to an existing column</h1>
             <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-5 w-full">
-              <select v-model="newSelectedColumnID" class="py-2 px-3 rounded-md border border-gray-300 focus:outline-none focus:border-indigo-600">
+              <select v-model="newSelectedColumnID" class="py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300">
                 <option disabled value="">Select a column</option>
                 <option v-for="(column, key) in boardData" :key="key" :value="key">{{ column.title }}</option>
               </select>
-              <input v-model="newTaskName" type="text" class="py-2 px-3 rounded-md border border-gray-300 focus:outline-none focus:border-indigo-600" placeholder="Enter task name">
+              <input v-model="newTaskName" type="text" class="py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300" placeholder="Enter task name">
               <div></div>
               <button @click="createTask" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Add Task</button>
             </div>
@@ -285,8 +289,8 @@ const newColumn = async (taskID) => {
                   </button>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-1 p-1 w-full" v-for="(task, index) in column.tasks" :key="index">
-                  <input @blur="updateTask(task.id, task.title)" type="text" v-model="task.title" class="h-8 align-middle border border-gray-300 rounded-md px-2 py-1 text-black">
-                  <select v-model="updatedSelectedColumnID" @change="newColumn(task.id)" class="h-8 rounded-md border border-gray-300 focus:outline-none focus:border-indigo-600">
+                  <input @blur="updateTask(task.id, task.title)" type="text" v-model="task.title" class="h-8 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300">
+                  <select v-model="updatedSelectedColumnID" @change="newColumn(task.id)" class="h-8 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300">
                     <option disabled value="" selected>Change Column</option>
                     <option v-for="(column, key) in boardData" :key="key" :value="key">{{ column.title }}</option>
                   </select>
