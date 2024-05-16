@@ -52,7 +52,7 @@ const toggleDark = useToggle(isDark);
                   What is DataFlow Canban?
                 </h1>
                 <p class="w-full h-auto mb-4 dark:text-white">
-                  DataFlow Kanban is an app for managing your projects, tasks, and workflows with ease and efficiency.
+                  DataFlow Kanban is an app for managing your tasks with ease and efficiency.
                 </p>
                 <ul class="space-y-4 dark:text-white">
                   <li>
