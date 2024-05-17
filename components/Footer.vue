@@ -6,7 +6,7 @@
               <NuxtLink to="/" class="hover:underline me-4 md:me-6">Home</NuxtLink>
           </li>
           <li>
-              <NuxtLink to="/overview" class="hover:underline me-4 md:me-6">Account</NuxtLink>
+              <NuxtLink to="/account" class="hover:underline me-4 md:me-6">Account</NuxtLink>
           </li>
       </ul>
       </div>

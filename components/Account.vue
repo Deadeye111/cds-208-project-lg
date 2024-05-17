@@ -64,46 +64,32 @@ async function signOut() {
 </script>
 
 <template>
-  <div class="flex">
+  <div class="flex p-4">
     <div class="m-auto my-40">
-      <p class="text-lg dark:text-white mb-5">Sign in via magic link with your email below</p>
-      <form class="w-full max-w-sm" @submit.prevent="updateProfile">
-        <div class="md:flex md:items-center mb-6">
-          <div class="md:w-1/3">
-            <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="email">
-              Email
-            </label>
-          </div>
-          <div class="md:w-2/3">
-            <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 cursor-not-allowed" id="email" type="text" :value="user.email" disabled />
-          </div>
-        </div>
+      <p class="text-lg dark:text-white mb-5 flex-grow">Your account informations</p>
+      
+      <form class="w-full max-w-xl" @submit.prevent="updateProfile">
+        <div class="grid grid-cols-1 gap-1 w-full">
+          <label class="text-gray-500 font-bold pr-4" for="email">
+            Email
+          </label>
+          <input class="bg-gray-200 cursor-not-allowed appearance-none w-full py-2 px-4 leading-tight text-black border border-gray-300 rounded-md" id="email" type="text" :value="user.email" disabled />
 
-        <div class="md:flex md:items-center mb-6">
-          <div class="md:w-1/3">
-            <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="username">
-              Username
-            </label>
-          </div>
-          <div class="md:w-2/3">
-            <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="username" type="text" v-model="username" />
-          </div>
-        </div>
+          <label class="mt-2 text-gray-500 font-bold pr-4" for="username">
+            Username
+          </label>
+          <input class="appearance-none w-full py-2 px-4 leading-tight text-black border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300" id="username" type="text" v-model="username" />
 
-        <div class="flex items-center">
-          <div class="md:w-1/3"></div>
-          <div class="md:w-1/3">
+          <div class="mt-5 grid grid-cols-2 gap-1 w-full">
             <input
               type="submit"
-              class="hover:cursor-pointer shadow bg-indigo-600 hover:bg-indigo-700 focus:bg-indigo-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+              class="hover:cursor-pointer bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600 py-2 px-4"
               :value="loading ? 'Loading ...' : 'Update'"
               :disabled="loading"
             />
-          </div>
 
-          <div class="md:w-1/3 pl-5">
             <button
-              class="hover:cursor-pointer shadow bg-indigo-600 hover:bg-indigo-700 focus:bg-indigo-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+              class="hover:cursor-pointer bg-red-500 text-white rounded-md hover:bg-red-600 focus:outline-none focus:bg-red-600 py-2 px-4"
               @click="signOut"
               :disabled="loading"
             >
