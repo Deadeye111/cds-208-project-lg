@@ -1,8 +1,4 @@
 <script setup>
-definePageMeta({
-  middleware: 'auth'
-})
-
 import { useDark, useToggle } from "@vueuse/core";
 
 import Header from '../components/Header'

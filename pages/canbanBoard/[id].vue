@@ -1,7 +1,4 @@
 <script setup>
-definePageMeta({
-  middleware: 'auth'
-})
 
 const loading = ref(false)
 
