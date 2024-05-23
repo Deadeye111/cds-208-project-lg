@@ -157,7 +157,6 @@ const updateBoard = async (boardID, boardName) => {
                   <div class="mt-2 lg:mt-0">Created at: {{ new Date(board.created_at).toLocaleString('de-CH', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }) }}</div>
                   <NuxtLink :to="`/canbanBoard/${board.id}`" class="text-center bg-lime-500 text-white px-4 py-2 rounded-md hover:bg-lime-600 mt-2 lg:mt-0">View</NuxtLink>
                   <button @click="deleteBoard(board.id)" class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 mt-2 lg:mt-0">Delete</button>
-                  <hr class="mt-5" />
                 </div>
               </li>
             </ul>
