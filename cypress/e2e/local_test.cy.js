@@ -26,9 +26,11 @@ describe('local test', () => {
     cy.get('.w-6').click();
     cy.get('a > .bg-blue-500').click();
     cy.get('.bg-red-500').click();
+    /* ==== Logout ==== */
     cy.get(':nth-child(2) > .hover\\:underline').click();
     cy.wait(500);
     cy.get('.bg-red-500').click();
     cy.wait(500);
+    cy.contains('Login').should('be.visible');
   });
 })
