@@ -42,9 +42,6 @@ const loadBoards = async () => {
   }
 };
 
-// Fetch data
-loadBoards()
-
 // v-model component
 const newBoardName = ref('')
 
@@ -119,6 +116,11 @@ const updateBoard = async (boardID, boardName) => {
     console.log("Board updated..")
   }
 };
+
+// Fetch data
+await useAsyncData('loadBoards', async () => {
+    return loadBoards()}
+)
 
 </script>
 

@@ -5,6 +5,7 @@ const loading = ref(true)
 const username = ref('')
 
 loading.value = true
+
 const user = useSupabaseUser()
 
 const { data } = await supabase

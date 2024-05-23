@@ -75,9 +75,6 @@ const loadEntries = async () => {
   loading.value = false
 };
 
-// Fetch data
-loadEntries()
-
 // v-model component
 const newColumnName = ref('')
 
@@ -230,6 +227,11 @@ const newColumn = async (taskID) => {
   updatedSelectedColumnID.value = ''
 };
 
+// Fetch data
+await useAsyncData('loadEntries', async () => {
+    return loadEntries()}
+)
+
 </script>
 
 <template>
@@ -285,7 +287,7 @@ const newColumn = async (taskID) => {
           <!-- Canban board -->
           <div class="p-3 shadow-md rounded-lg flex-grow border-2 border-solid border-slate-200">
             <h1 class="dark:text-white text-lg font-bold w-full text-center mb-3">Canban board</h1>
-            <p v-if="loading">Loading..</p>
+            <p v-if="loading" class="dark:text-white font-bold text-center">Loading..</p>
             <div v-else class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 w-full">
               <div v-for="(column, key) in boardData" :key="key" class="column border-2 mb-3">
                 <div class="flex">
