@@ -25,7 +25,7 @@ const setAuthMethod = (method) => {
     
     <!-- Select Auth method -->
     <div v-if="!user && authMethod === ''" class="flex">
-      <div class="m-auto my-40">
+      <div class="m-auto my-32">
         <button @click="setAuthMethod('login')" class="m-2 cursor-pointer flex-shrink-0 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600 py-2 px-4">Login</button>
         <button @click="setAuthMethod('magiclink')" class="m-2 cursor-pointer flex-shrink-0 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600 py-2 px-4">Auth with Magic Link</button>
         <button @click="setAuthMethod('register')" class="m-2 cursor-pointer flex-shrink-0 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600 py-2 px-4">Register</button>

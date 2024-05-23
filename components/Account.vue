@@ -65,7 +65,7 @@ async function signOut() {
 
 <template>
   <div class="flex p-4">
-    <div class="m-auto my-40">
+    <div class="m-auto my-20">
       <p class="text-lg dark:text-white mb-5 flex-grow">Your account informations</p>
       
       <form class="w-full max-w-xl" @submit.prevent="updateProfile">

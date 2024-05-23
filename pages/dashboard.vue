@@ -83,18 +83,21 @@ const createBoard = async () => {
 };
 
 const deleteBoard = async (boardID) => {
-  const { error } = await supabase
-    .from('canban_boards')
-    .delete()
-    .eq('id', boardID)
+  var result = confirm("Want to delete the board?");
+  if (result) {
+    const { error } = await supabase
+      .from('canban_boards')
+      .delete()
+      .eq('id', boardID)
 
-  if (error) {
-    console.error("Error deleting board:", error.message);
-    return;
-  } else {
-    // Fetch data
-    loadBoards()
-    console.log("Board deleted..")
+    if (error) {
+      console.error("Error deleting board:", error.message);
+      return;
+    } else {
+      // Fetch data
+      loadBoards()
+      console.log("Board deleted..")
+    }
   }
 };
 

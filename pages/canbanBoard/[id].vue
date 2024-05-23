@@ -150,36 +150,42 @@ const createTask = async () => {
 };
 
 const deleteColumn = async (columnID) => {
-  const { error } = await supabase
-    .from('board_columns')
-    .delete()
-    .eq('id', columnID)
+  var result = confirm("Want to delete the column?");
+  if (result) {
+    const { error } = await supabase
+      .from('board_columns')
+      .delete()
+      .eq('id', columnID)
 
-  if (error) {
-    // Handle deletion error, e.g., display an error message
-    console.error("Error deleting column:", error.message);
-    return;
-  } else {
-    // Fetch data
-    loadEntries()
-    console.log("Board column deleted..")
+    if (error) {
+      // Handle deletion error, e.g., display an error message
+      console.error("Error deleting column:", error.message);
+      return;
+    } else {
+      // Fetch data
+      loadEntries()
+      console.log("Board column deleted..")
+    }
   }
 };
 
 const deleteTask = async (taskID) => {
-  const { error } = await supabase
-    .from('column_tasks')
-    .delete()
-    .eq('id', taskID)
+  var result = confirm("Want to delete the task?");
+  if (result) {
+    const { error } = await supabase
+      .from('column_tasks')
+      .delete()
+      .eq('id', taskID)
 
-  if (error) {
-    // Handle deletion error, e.g., display an error message
-    console.error("Error deleting task:", error.message);
-    return;
-  } else {
-    // Fetch data
-    loadEntries()
-    console.log("Board task deleted..")
+    if (error) {
+      // Handle deletion error, e.g., display an error message
+      console.error("Error deleting task:", error.message);
+      return;
+    } else {
+      // Fetch data
+      loadEntries()
+      console.log("Board task deleted..")
+    }
   }
 };
 
@@ -191,7 +197,7 @@ const updateTask = async (taskID, taskName) => {
     loadEntries()
     return;
   }
-
+  
   const { error } = await supabase
     .from('column_tasks')
     .update({ title: taskName })

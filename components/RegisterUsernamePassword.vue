@@ -24,7 +24,7 @@ const handleRegister = async () => {
 
 <template>  
   <div class="flex p-4">
-    <div class="m-auto my-40">
+    <div class="m-auto my-32">
       <p class="text-lg dark:text-white mb-5">Register with email and password below</p>
       
       <form class="w-full max-w-lg" @submit.prevent="handleRegister">
