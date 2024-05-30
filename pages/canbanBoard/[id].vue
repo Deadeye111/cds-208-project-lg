@@ -6,7 +6,6 @@ const route = useRoute()
 const boardID = route.params.id
 
 import { useDark, useToggle } from "@vueuse/core";
-import BarChart from '../../components/BarChart'
 
 const isDark = useDark();
 const toggleDark = useToggle(isDark);

@@ -4,8 +4,6 @@ import { useDark, useToggle } from "@vueuse/core";
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
 
-import Header from '../components/Header'
-
 const user = useSupabaseUser()
 
 const authMethod = ref(''); // 'login', 'magiclink', 'register'
