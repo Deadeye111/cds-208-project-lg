@@ -135,7 +135,7 @@ await useAsyncData('loadBoards', async () => {
 
           <div class="flex flex-col items-center p-3 shadow-md rounded-lg border-2 border-solid border-slate-200">
             <h1 class="dark:text-white text-lg font-bold w-full text-center mb-3">Create Boards</h1>
-            <div class="flex items-center justify-center">
+            <div class="flex items-center justify-center mb-3">
               <input type="text" v-model="newBoardName" placeholder="Canban board Name.." class="px-4 py-2 sm:w-52 md:w-72 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300">
               <button @click="createBoard" class="ml-2 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Add</button>
             </div>

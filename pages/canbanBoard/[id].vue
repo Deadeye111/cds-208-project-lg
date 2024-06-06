@@ -1,11 +1,10 @@
 <script setup>
+import { useDark, useToggle } from "@vueuse/core";
 
 const loading = ref(false)
 
 const route = useRoute()
 const boardID = route.params.id
-
-import { useDark, useToggle } from "@vueuse/core";
 
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
@@ -237,33 +236,14 @@ await useAsyncData('loadEntries', async () => {
   <main class="dark:bg-[#121212] bg-white min-h-screen pb-20">
     <Header v-if="boardExists" :title=boardName />
 
-    <div v-if="!boardExists" class="flex justify-between relative">
-      <div class="border-2 border-solid border-slate-700 dark:border-slate-200 p-10 mt-20 text-lg text-red-600 text-center m-auto">
-        <p>Board does not exist</p>
-        <br>
-        <NuxtLink to="/dashboard">
-            <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">
-                To your dashboard
-            </button>
-        </NuxtLink>
-      </div>
-    </div>
+    <!-- Info component if board does not exist -->
+    <BoardNotExists v-if="!boardExists"/>
 
     <div v-if="boardExists" class="container mx-auto pt-5 mt-5 pl-5 pr-5">
       <div class="flex justify-center">
         <div class="grid grid-cols-1 gap-5 w-full">
-          <!-- Instructions -->
-          <div class="flex flex-col items-center p-3 shadow-md rounded-lg flex-grow border-2 border-solid border-slate-200">
-            <h1 class="dark:text-white text-lg font-bold w-full text-center mb-3">How to use the Canban Board</h1>
-            <p class="text-md text-center w-full h-auto dark:text-white">
-              Tasks get updated automatically after the text in the input field was changed<br>To delete a task just empty the input field<br>To move a task choose the new column from the dropdown
-            </p>
-            <NuxtLink to="/dashboard">
-                <button class="bg-blue-500 hover:bg-blue-700 text-white mt-3 py-2 px-4 rounded">
-                    Back to dashboard
-                </button>
-            </NuxtLink>
-          </div>
+          <!-- Instructions component-->
+          <CanbanBoardInstructions/>
 
           <!-- Input field for creating a new column -->
           <div class="p-3 shadow-md rounded-lg flex-grow border-2 border-solid border-slate-200">
