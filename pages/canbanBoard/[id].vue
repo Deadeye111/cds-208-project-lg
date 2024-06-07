@@ -1,6 +1,11 @@
 <script setup>
 import { useDark, useToggle } from "@vueuse/core";
 
+// Load and initialize pinia store
+const canbanBoardDataStore = useCanbanBoardDataStore()
+const { loadCanbanBoardData } = canbanBoardDataStore
+const { boardData, barLabels, barData} = storeToRefs(canbanBoardDataStore)
+
 const loading = ref(false)
 
 const route = useRoute()
@@ -27,10 +32,19 @@ if (error) {
     boardName.value = canbanBoardData[0].board_name;
     console.log(`Loaded board: ${boardName.value}`);
     boardExists.value = true;
+    // Fetch data
+    loadCanbanBoardData(boardID);  // Pass boardID to load data of current board
 } else {
-  console.log("Board data is null or empty");
+  console.log("Board does not exist..");
 }
 
+/*
+// Fetch data
+await useAsyncData('loadCanbanBoardData', async () => {
+  return loadCanbanBoardData(boardID)}  // Pass boardID to load data of current board
+)*/
+
+/*
 // Define a reactive global variable using Vue 3's reactive
 const boardData = reactive({});
 const barLabels = ref([]);
@@ -72,7 +86,7 @@ const loadEntries = async () => {
   }
   loading.value = false
 };
-
+*/
 // v-model component
 const newColumnName = ref('')
 
@@ -98,7 +112,7 @@ const createColumn = async () => {
     return;
   } else {
     // Fetch data
-    loadEntries()
+    loadCanbanBoardData(boardID);  // Pass boardID to load data of current board
     console.log("Board column added..")
   }
 
@@ -133,7 +147,7 @@ const createTask = async () => {
     return;
   } else {
     // Fetch data
-    loadEntries()
+    loadCanbanBoardData(boardID);  // Pass boardID to load data of current board
     console.log("Board task added..")
   }
 
@@ -155,7 +169,7 @@ const deleteColumn = async (columnID) => {
       return;
     } else {
       // Fetch data
-      loadEntries()
+      loadCanbanBoardData(boardID);  // Pass boardID to load data of current board
       console.log("Board column deleted..")
     }
   }
@@ -175,7 +189,7 @@ const deleteTask = async (taskID) => {
       return;
     } else {
       // Fetch data
-      loadEntries()
+      loadCanbanBoardData(boardID);  // Pass boardID to load data of current board
       console.log("Board task deleted..")
     }
   }
@@ -186,7 +200,7 @@ const updateTask = async (taskID, taskName) => {
   if (taskName==='') {
     deleteTask(taskID)
     // Fetch data
-    loadEntries()
+    loadCanbanBoardData(boardID);  // Pass boardID to load data of current board
     return;
   }
   
@@ -217,18 +231,13 @@ const newColumn = async (taskID) => {
     return;
   } else {
     // Fetch data
-    loadEntries()
+    loadCanbanBoardData(boardID);  // Pass boardID to load data of current board
     console.log("Board task column updated..")
   }
 
   // Clear select field
   updatedSelectedColumnID.value = ''
 };
-
-// Fetch data
-await useAsyncData('loadEntries', async () => {
-    return loadEntries()}
-)
 
 </script>
 
