@@ -38,6 +38,9 @@ export const useCanbanBoardDataStore = defineStore('canbanBoardDataStore', () =>
       console.log("loaded data..")
 
     } else {
+      // Empty barLabels and barData if data is null
+      barLabels.value = [];
+      barData.value = [];
       console.log("data is null..");
     }
   }

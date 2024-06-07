@@ -33,60 +33,13 @@ if (error) {
     console.log(`Loaded board: ${boardName.value}`);
     boardExists.value = true;
     // Fetch data
-    loadCanbanBoardData(boardID);  // Pass boardID to load data of current board
+    await useAsyncData('loadCanbanBoardData', async () => {
+      return loadCanbanBoardData(boardID)}  // Pass boardID to load data of current board
+    )
 } else {
   console.log("Board does not exist..");
 }
 
-/*
-// Fetch data
-await useAsyncData('loadCanbanBoardData', async () => {
-  return loadCanbanBoardData(boardID)}  // Pass boardID to load data of current board
-)*/
-
-/*
-// Define a reactive global variable using Vue 3's reactive
-const boardData = reactive({});
-const barLabels = ref([]);
-const barData = ref([]);
-
-const loadEntries = async () => {
-  loading.value = true
-
-  // Empty boardData
-  for (const key in boardData) {
-    delete boardData[key];
-  }
-  
-  const { data: canbanBoardColumns } = await supabase
-    .from('board_columns')
-    .select(`id, title, created_at`)
-    .eq('board_id', boardID);
-  
-  if (canbanBoardColumns && canbanBoardColumns.length > 0) {
-    for (const column of canbanBoardColumns) {
-      const columnID = column.id;
-      const tasks = await supabase
-        .from('column_tasks')
-        .select(`id, title, created_at`)
-        .eq('column_id', columnID);
-      // Add tasks to object boardData
-      boardData[columnID] = {
-        title: column.title,
-        created_at: column.created_at,
-        tasks: tasks.data || [] // tasks.data will be an array of tasks or empty if no tasks found
-      };
-    }
-    barLabels.value = Object.values(boardData).map(column => column.title);
-    barData.value = Object.values(boardData).map(column => column.tasks.length);
-    
-    console.log("loaded data..")
-  } else {
-    console.log("data is null");
-  }
-  loading.value = false
-};
-*/
 // v-model component
 const newColumnName = ref('')
 
