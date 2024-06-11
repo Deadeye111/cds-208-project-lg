@@ -19,6 +19,20 @@ This Project was built using:
 - Cypress
     - Testing
 
+## Testing
+
+To test the application open cypress:
+
+```bash
+# cypress gui
+npx cypress open
+
+# run cypress test
+npx cypress run
+```
+
+There are two different tests one for the deployed app and one for the local app
+
 ## Technical Documentation
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.

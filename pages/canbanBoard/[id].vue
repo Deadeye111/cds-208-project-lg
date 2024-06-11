@@ -256,6 +256,7 @@ const newColumn = async (taskID) => {
 
           <div v-if="barData.length > 0" class="p-3 shadow-md rounded-lg flex-grow border-2 border-solid border-slate-200">
             <h1 class="dark:text-white text-center mt-1 text-lg font-bold w-full pl-2">Number of tasks per column</h1>
+            <!-- BarChart component-->
             <BarChart title="" legendLabel="Count" :labels="barLabels" :data="barData" />
           </div>
         </div>

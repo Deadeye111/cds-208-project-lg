@@ -10,7 +10,7 @@ describe('deployed test', () => {
     cy.wait(500);
     cy.contains('input', 'Login').click();
     cy.contains('Your account informations').should('be.visible');
-    /* ==== Board Creation and updates ==== */
+    /* ==== Board Creation, Deletion and Updates ==== */
     cy.get(':nth-child(1) > .hover\\:underline').click();
     cy.get(':nth-child(1) > .inline-flex > .text-center').click();
     cy.get('.sm\\:w-52').type('testboard');
